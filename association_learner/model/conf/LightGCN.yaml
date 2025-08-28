@@ -1,0 +1,45 @@
+# training.set: ./dataset/douban-book/train.txt
+# test.set: ./dataset/douban-book/test.txt
+
+DataName: KIBA
+training.set: ../../data/KIBA/random/train.txt
+validation.set: ../../data/KIBA/random/valid.txt
+test.set: ../../data/KIBA/random/test.txt
+save_dir: ./results/KIBA
+save_embedding: ../save_embedding/KIBA
+
+#DataName: DrugBank
+#training.set: ../../data/DrugBank/random/train.txt
+#validation.set: ../../data/DrugBank/random/valid.txt
+#test.set: ../../data/DrugBank/random/test.txt
+#save_dir: ./results/DrugBank
+#save_embedding: ../save_embedding/DrugBank
+
+#DataName: Davis
+#training.set: ../../data/Davis/random/train.txt
+#validation.set: ../../data/Davis/random/valid.txt
+#test.set: ../../data/Davis/random/test.txt
+#save_dir: ./results/Davis
+#save_embedding: ../save_embedding/Davis
+
+model:
+  name: LightGCN
+  type: graph
+
+item.ranking.topN: [10,20]
+
+embedding.size: 160
+#embedding.size: 1024
+max.epoch: 300
+batch.size: 100
+learning.rate: 0.0001
+
+reg.lambda: 1e-4
+patience: 20
+
+LightGCN:
+  n_layer: 2
+  lambda: 0.01
+  eps: 0.05
+
+
